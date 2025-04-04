@@ -542,13 +542,15 @@ a {
   line-height: 1.75; /* 175% */
 }
 .blogs .blog-list {
+  overflow: hidden;
   margin-top: 55px;
   display: flex;
   gap: 30px;
 }
 
 .blogs .item {
-  width: 33.33%;
+  flex-shrink: 0;
+  width: calc(33.33% - 20px);
   border-radius: 16px;
   background: #fff;
 }
@@ -587,7 +589,6 @@ a {
   left: 0;
   bottom: 0;
   content: "";
-
   display: inline-block;
   right: -27px;
   height: 1px;
@@ -604,7 +605,25 @@ a {
 
 .blogs .item .btn {
   margin-top: 12px;
+  font-size: 1.4rem;
 }
 .blogs .item .btn:hover {
   background: var(--primary-color);
+}
+.blogs .dots {
+  justify-content: center;
+  margin-top: 38px;
+  display: flex;
+  gap: 6px;
+}
+.blogs .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5f5b53;
+  cursor: pointer;
+}
+.blogs .dot.active {
+  background: var(--primary-color);
+  cursor: default;
 }
